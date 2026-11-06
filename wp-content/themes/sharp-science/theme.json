@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": false,
+    "color": {
+      "custom": false, "customGradient": false, "defaultPalette": false, "defaultGradients": false,
+      "palette": [
+        { "slug": "white", "name": "White", "color": "#FFFFFF" },
+        { "slug": "porcelain", "name": "Porcelain", "color": "#F6F4EF" },
+        { "slug": "bone", "name": "Bone", "color": "#ECE7DE" },
+        { "slug": "graphite", "name": "Graphite", "color": "#16181D" },
+        { "slug": "slate", "name": "Slate", "color": "#5E646E" },
+        { "slug": "hairline", "name": "Hairline", "color": "#D9D3C8" },
+        { "slug": "brass", "name": "Brass", "color": "#A8844E" },
+        { "slug": "glacier", "name": "Glacier", "color": "#DCE6E8" },
+        { "slug": "signal", "name": "Signal", "color": "#2F6B5A" }
+      ]
+    },
+    "layout": { "contentSize": "880px", "wideSize": "1320px" },
+    "typography": {
+      "customFontSize": false, "defaultFontSizes": false,
+      "fontFamilies": [
+        { "slug": "display", "name": "Instrument Serif", "fontFamily": "\"Instrument Serif\", Georgia, serif" },
+        { "slug": "ui", "name": "Geist", "fontFamily": "Geist, system-ui, sans-serif" },
+        { "slug": "mono", "name": "Geist Mono", "fontFamily": "\"Geist Mono\", ui-monospace, monospace" }
+      ]
+    }
+  }
+}

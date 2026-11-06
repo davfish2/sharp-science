@@ -1,0 +1,252 @@
+[
+  {
+    "fg": "graphite",
+    "bg": "white",
+    "fgHex": "#16181D",
+    "bgHex": "#FFFFFF",
+    "use": "Body text",
+    "required": 4.5,
+    "ratio": 17.76,
+    "pass": true
+  },
+  {
+    "fg": "graphite",
+    "bg": "porcelain",
+    "fgHex": "#16181D",
+    "bgHex": "#F6F4EF",
+    "use": "Body text",
+    "required": 4.5,
+    "ratio": 16.16,
+    "pass": true
+  },
+  {
+    "fg": "graphite",
+    "bg": "bone",
+    "fgHex": "#16181D",
+    "bgHex": "#ECE7DE",
+    "use": "Body text",
+    "required": 4.5,
+    "ratio": 14.42,
+    "pass": true
+  },
+  {
+    "fg": "graphite",
+    "bg": "glacier",
+    "fgHex": "#16181D",
+    "bgHex": "#DCE6E8",
+    "use": "Body text",
+    "required": 4.5,
+    "ratio": 13.98,
+    "pass": true
+  },
+  {
+    "fg": "slate",
+    "bg": "white",
+    "fgHex": "#5E646E",
+    "bgHex": "#FFFFFF",
+    "use": "Secondary text",
+    "required": 4.5,
+    "ratio": 5.96,
+    "pass": true
+  },
+  {
+    "fg": "slate",
+    "bg": "porcelain",
+    "fgHex": "#5E646E",
+    "bgHex": "#F6F4EF",
+    "use": "Secondary text",
+    "required": 4.5,
+    "ratio": 5.42,
+    "pass": true
+  },
+  {
+    "fg": "slate",
+    "bg": "bone",
+    "fgHex": "#5E646E",
+    "bgHex": "#ECE7DE",
+    "use": "Secondary text",
+    "required": 4.5,
+    "ratio": 4.84,
+    "pass": true
+  },
+  {
+    "fg": "slate",
+    "bg": "glacier",
+    "fgHex": "#5E646E",
+    "bgHex": "#DCE6E8",
+    "use": "Secondary text",
+    "required": 4.5,
+    "ratio": 4.69,
+    "pass": true
+  },
+  {
+    "fg": "white",
+    "bg": "graphite",
+    "fgHex": "#FFFFFF",
+    "bgHex": "#16181D",
+    "use": "Footer and button text",
+    "required": 4.5,
+    "ratio": 17.76,
+    "pass": true
+  },
+  {
+    "fg": "porcelain",
+    "bg": "graphite",
+    "fgHex": "#F6F4EF",
+    "bgHex": "#16181D",
+    "use": "Footer and button text",
+    "required": 4.5,
+    "ratio": 16.16,
+    "pass": true
+  },
+  {
+    "fg": "hairline",
+    "bg": "graphite",
+    "fgHex": "#D9D3C8",
+    "bgHex": "#16181D",
+    "use": "Footer secondary text",
+    "required": 4.5,
+    "ratio": 11.93,
+    "pass": true
+  },
+  {
+    "fg": "brass",
+    "bg": "graphite",
+    "fgHex": "#A8844E",
+    "bgHex": "#16181D",
+    "use": "Accent text on dark",
+    "required": 4.5,
+    "ratio": 5.14,
+    "pass": true
+  },
+  {
+    "fg": "brass",
+    "bg": "white",
+    "fgHex": "#A8844E",
+    "bgHex": "#FFFFFF",
+    "use": "Large text only",
+    "required": 3,
+    "ratio": 3.46,
+    "pass": true
+  },
+  {
+    "fg": "brass",
+    "bg": "porcelain",
+    "fgHex": "#A8844E",
+    "bgHex": "#F6F4EF",
+    "use": "Large text only",
+    "required": 3,
+    "ratio": 3.14,
+    "pass": true
+  },
+  {
+    "fg": "signal",
+    "bg": "white",
+    "fgHex": "#2F6B5A",
+    "bgHex": "#FFFFFF",
+    "use": "In-stock and success text",
+    "required": 4.5,
+    "ratio": 6.23,
+    "pass": true
+  },
+  {
+    "fg": "signal",
+    "bg": "porcelain",
+    "fgHex": "#2F6B5A",
+    "bgHex": "#F6F4EF",
+    "use": "In-stock and success text",
+    "required": 4.5,
+    "ratio": 5.67,
+    "pass": true
+  },
+  {
+    "fg": "white",
+    "bg": "signal",
+    "fgHex": "#FFFFFF",
+    "bgHex": "#2F6B5A",
+    "use": "Text on success fill",
+    "required": 4.5,
+    "ratio": 6.23,
+    "pass": true
+  },
+  {
+    "fg": "graphite",
+    "bg": "vials-storage",
+    "fgHex": "#16181D",
+    "bgHex": "#7A8B99",
+    "use": "Text on band",
+    "required": 4.5,
+    "ratio": 5.06,
+    "pass": true
+  },
+  {
+    "fg": "graphite",
+    "bg": "volumetric-glassware",
+    "fgHex": "#16181D",
+    "bgHex": "#8C9A7E",
+    "use": "Text on band",
+    "required": 4.5,
+    "ratio": 5.95,
+    "pass": true
+  },
+  {
+    "fg": "graphite",
+    "bg": "beakers-flasks",
+    "fgHex": "#16181D",
+    "bgHex": "#9C8A72",
+    "use": "Text on band",
+    "required": 4.5,
+    "ratio": 5.32,
+    "pass": true
+  },
+  {
+    "fg": "graphite",
+    "bg": "pipetting",
+    "fgHex": "#16181D",
+    "bgHex": "#8A80A0",
+    "use": "Text on band",
+    "required": 4.5,
+    "ratio": 4.8,
+    "pass": true
+  },
+  {
+    "fg": "graphite",
+    "bg": "instruments",
+    "fgHex": "#16181D",
+    "bgHex": "#A07F7F",
+    "use": "Text on band",
+    "required": 4.5,
+    "ratio": 4.94,
+    "pass": true
+  },
+  {
+    "fg": "graphite",
+    "bg": "lab-essentials",
+    "fgHex": "#16181D",
+    "bgHex": "#9AA3A6",
+    "use": "Text on band",
+    "required": 4.5,
+    "ratio": 6.9,
+    "pass": true
+  },
+  {
+    "fg": "hairline",
+    "bg": "white",
+    "fgHex": "#D9D3C8",
+    "bgHex": "#FFFFFF",
+    "use": "Decorative rule (exempt)",
+    "required": 0,
+    "ratio": 1.49,
+    "pass": true
+  },
+  {
+    "fg": "slate",
+    "bg": "white",
+    "fgHex": "#5E646E",
+    "bgHex": "#FFFFFF",
+    "use": "Input border (non-text)",
+    "required": 3,
+    "ratio": 5.96,
+    "pass": true
+  }
+]
