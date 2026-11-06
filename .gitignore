@@ -1,0 +1,35 @@
+# Track only our own code. Everything else in a WordPress tree is ignored.
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/xmlrpc.php
+/license.txt
+/readme.html
+/wp-content/*
+!/wp-content/themes/
+!/wp-content/plugins/
+/wp-content/themes/*
+!/wp-content/themes/sharp-science/
+/wp-content/plugins/*
+!/wp-content/plugins/sharp-science-core/
+wp-content/uploads/
+
+# Dependencies and environments
+node_modules/
+vendor/
+.venv/
+__pycache__/
+
+# Secrets and local state
+.env
+.env.*
+*.log
+*.sql
+*.sqlite
+.wp-env/
+.wp-env.override.json
+.DS_Store
+.lighthouseci/
+test-results/
+playwright-report/

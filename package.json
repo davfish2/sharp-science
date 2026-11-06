@@ -1,0 +1,24 @@
+{
+  "name": "sharp-science",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Sharp Science WooCommerce pitch demo",
+  "type": "module",
+  "scripts": {
+    "wp:start": "wp-env start",
+    "wp:stop": "wp-env stop",
+    "brand": "node tools/build-brand.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@wordpress/env": "^12.1.0",
+    "jsqr": "^1.4.0",
+    "opentype.js": "^2.0.0",
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.65.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.35.5"
+  }
+}
