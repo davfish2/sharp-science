@@ -1,0 +1,16 @@
+[
+ {
+  "page": "checkout@390",
+  "id": "region",
+  "impact": "moderate",
+  "nodes": 1,
+  "sample": "<p id=\"a11y-speak-intro-text\" class=\"a11y-speak-intro-text\" style=\"position:absolute;margin:-1px;padding:0;hei"
+ },
+ {
+  "page": "checkout@1440",
+  "id": "region",
+  "impact": "moderate",
+  "nodes": 1,
+  "sample": "<p id=\"a11y-speak-intro-text\" class=\"a11y-speak-intro-text\" style=\"position:absolute;margin:-1px;padding:0;hei"
+ }
+]

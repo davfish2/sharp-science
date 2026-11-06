@@ -25,4 +25,15 @@ node tools/build-brand-sheet.mjs       # design/brand-sheet.html
 Open `design/brand-sheet.html` in a browser to review.
 
 ## Run WordPress locally
-The `wp-env` setup arrives in Phase 3.
+```sh
+npx wp-env start
+tools/seed.sh     # re-runnable: store setup, 16 products, certificates, images
+```
+Site: http://localhost:8888. Admin: http://localhost:8888/wp-admin, `admin` / `password` (local only).
+
+## Test
+```sh
+npm test                                   # Playwright, 18 tests
+tools/audit.sh <lighthouse-dir> <out-dir>  # Lighthouse mobile
+node tools/audit-pages.mjs <axe.min.js>    # axe and review screenshots
+```

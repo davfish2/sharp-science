@@ -2,7 +2,7 @@
 defined( 'ABSPATH' ) || exit;
 
 add_action( 'wp_enqueue_scripts', function () {
-	wp_enqueue_script( 'ss-core', SS_CORE_URL . 'assets/core.js', array(), '1.0.0', array( 'strategy' => 'defer', 'in_footer' => true ) );
+	wp_enqueue_script( 'ss-core', SS_CORE_URL . 'assets/core.js', array(), '1.0.3', array( 'strategy' => 'defer', 'in_footer' => true ) );
 	wp_add_inline_script( 'ss-core', 'window.SS_CORE=' . wp_json_encode( array(
 		'cutoff'   => ss_get( 'cutoff' ),
 		'timezone' => ss_get( 'timezone' ),

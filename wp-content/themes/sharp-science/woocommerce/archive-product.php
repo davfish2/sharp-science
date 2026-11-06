@@ -19,7 +19,7 @@ $band    = $current ? ( get_term_meta( $current->term_id, 'ss_band', true ) ?: '
 	<?php wc_print_notices(); ?>
 	<?php if ( have_posts() ) : ?>
 		<div class="grid">
-			<?php while ( have_posts() ) : the_post(); $p = wc_get_product( get_the_ID() ); if ( $p ) { get_template_part( 'template-parts/product-card', null, array( 'product' => $p ) ); } endwhile; ?>
+			<?php while ( have_posts() ) : the_post(); $p = wc_get_product( get_the_ID() ); if ( $p ) { get_template_part( 'template-parts/product-card', null, array( 'product' => $p, 'heading' => 'h2' ) ); } endwhile; ?>
 		</div>
 		<?php
 		$links = paginate_links( array( 'type' => 'array', 'prev_text' => 'Previous', 'next_text' => 'Next' ) );

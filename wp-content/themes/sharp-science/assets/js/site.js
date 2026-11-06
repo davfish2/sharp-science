@@ -31,6 +31,7 @@
   const paint = (cart) => {
     const t = cart.totals, count = cart.items_count, badge = $('[data-cart-count]');
     badge.textContent = count; badge.hidden = !count;
+    $('[data-cart-open]').setAttribute('aria-label', count ? `Open cart, ${count} ${count === 1 ? 'item' : 'items'}` : 'Open cart');
     const minor = 10 ** t.currency_minor_unit;
     const value = (+t.total_items + +t.total_items_tax - +t.total_discount - +t.total_discount_tax) / minor;
     $('[data-cart-total]').textContent = money(+t.total_items + +t.total_items_tax, t);

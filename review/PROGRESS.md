@@ -25,3 +25,8 @@
 
 ## Phase 5: demo products
 - Built: 16 products, 6 sample certificates, re-runnable import (`wp sharp import`, `tools/seed.sh`). Certificates and their PDFs state they are sample data.
+
+## Phase 6: verify and report
+- Built: Playwright suite in `/tests` (18 tests), `tools/audit.sh`, `tools/audit-pages.mjs`, screenshots in `review/screens`, `review/CLIENT-GUIDE.md`, `review/CLIENT-PRESENTATION.md`.
+- View: results are in `review/CLIENT-PRESENTATION.md`. Run `npm test` with the site started.
+- Result: all functional checks pass. A WordPress detector still identifies the platform.

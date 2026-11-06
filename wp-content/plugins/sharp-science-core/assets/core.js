@@ -31,6 +31,10 @@
   tick();
   setInterval(tick, 15000);
 
+  // WooCommerce's checkout puts aria-label on role-less divs. A group role makes that valid.
+  const summaryRole = () => document.querySelectorAll('.wc-block-checkout :is(div,span)[aria-label]:not([role])').forEach((el) => el.setAttribute('role', 'group'));
+  if (document.body.classList.contains('is-checkout')) { summaryRole(); new MutationObserver(summaryRole).observe(document.body, { childList: true, subtree: true }); }
+
   const gate = document.getElementById('entry-notice');
   if (!gate) return;
   if (document.cookie.split('; ').some((c) => c.startsWith('ss_entry=1'))) return;

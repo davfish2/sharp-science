@@ -30,16 +30,16 @@
 	</div>
 </footer>
 <div class="scrim" data-scrim hidden></div>
-<aside class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Cart" hidden>
-	<header class="drawer__head"><h2>Cart</h2><button class="icon-btn" type="button" data-cart-close aria-label="Close cart"><?php echo ss_icon( 'close' ); // phpcs:ignore ?></button></header>
+<div class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Cart" hidden>
+	<div class="drawer__head"><h2>Cart</h2><button class="icon-btn" type="button" data-cart-close aria-label="Close cart"><?php echo ss_icon( 'close' ); // phpcs:ignore ?></button></div>
 	<?php echo ss_free_ship_bar(); // phpcs:ignore ?>
 	<div class="drawer__items" data-cart-items aria-live="polite"></div>
-	<footer class="drawer__foot">
+	<div class="drawer__foot">
 		<p class="drawer__total"><span>Subtotal incl. GST</span><strong data-cart-total>$0.00</strong></p>
 		<a class="btn btn--block" href="<?php echo esc_url( wc_get_checkout_url() ); ?>">Checkout</a>
 		<a class="btn btn--ghost btn--block" href="<?php echo esc_url( wc_get_cart_url() ); ?>">View cart</a>
-	</footer>
-</aside>
+	</div>
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>

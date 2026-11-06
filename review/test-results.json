@@ -1,0 +1,900 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "/Users/tobroe/Projects/sharp-science/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/Users/tobroe/Projects/sharp-science/playwright.config.mjs",
+    "rootDir": "/Users/tobroe/Projects/sharp-science/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/tobroe/Projects/sharp-science/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/tobroe/Projects/sharp-science/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.mjs"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/tobroe/Projects/sharp-science/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "/Users/tobroe/Projects/sharp-science/tests",
+        "snapshotDir": "/Users/tobroe/Projects/sharp-science/tests",
+        "testIgnore": [],
+        "testMatch": "*.spec.mjs",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:8888",
+          "browserName": "chromium",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/158.0.8127.18 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "review/test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "admin.spec.mjs",
+      "file": "admin.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "9. product editing as admin",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 180000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5509,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:46:59.561Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0933db9b5d5de39102bf-5e588ed08f08bdc16f0b",
+          "file": "admin.spec.mjs",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "10. CSV export",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 864,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp post delete 118 --force' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp post delete 118 --force` in 'cli'. (in 2s 613ms)\n"
+                    },
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp post list --post_type=product --post_status=any --s=Test Reagent Bottle --field=ID' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp post list --post_type=product --post_status=any --s=Test Reagent Bottle --field=ID` in 'cli'. (in 1s 480ms)\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:05.469Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0933db9b5d5de39102bf-0e25ecd804ecfb6179d0",
+          "file": "admin.spec.mjs",
+          "line": 67,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "browse.spec.mjs",
+      "file": "browse.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "2. browse without login",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1418,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:11.520Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ea9b5034be08748bc930-51444367de6e7463eb7f",
+          "file": "browse.spec.mjs",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "checkout.spec.mjs",
+      "file": "checkout.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "3. guest checkout completes and records confirmation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5708,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp eval $o = wc_get_orders(['limit'=>1,'orderby'=>'id','order'=>'DESC','return'=>'ids','status'=>array_keys(wc_get_order_statuses())]); echo '@@'.(empty($o)?0:$o[0]).'@@';' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp eval $o = wc_get_orders(['limit'=>1,'orderby'=>'id','order'=>'DESC','return'=>'ids','status'=>array_keys(wc_get_order_statuses())]); echo '@@'.(empty($o)?0:$o[0]).'@@';` in 'cli'. (in 1s 527ms)\n"
+                    },
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp eval echo '@@'.wc_get_order(120)->get_meta('_ss_confirmed_at').'@@';' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp eval echo '@@'.wc_get_order(120)->get_meta('_ss_confirmed_at').'@@';` in 'cli'. (in 1s 526ms)\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:12.946Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "29b720a9ac74378ae6c8-76fc93893849a2b175ea",
+          "file": "checkout.spec.mjs",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "4. checkout blocked until ticked",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10379,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp eval $o = wc_get_orders(['limit'=>1,'orderby'=>'id','order'=>'DESC','return'=>'ids','status'=>array_keys(wc_get_order_statuses())]); echo '@@'.(empty($o)?0:$o[0]).'@@';' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp eval $o = wc_get_orders(['limit'=>1,'orderby'=>'id','order'=>'DESC','return'=>'ids','status'=>array_keys(wc_get_order_statuses())]); echo '@@'.(empty($o)?0:$o[0]).'@@';` in 'cli'. (in 1s 483ms)\n"
+                    },
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp eval $o = wc_get_orders(['limit'=>1,'orderby'=>'id','order'=>'DESC','return'=>'ids','status'=>array_keys(wc_get_order_statuses())]); echo '@@'.(empty($o)?0:$o[0]).'@@';' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp eval $o = wc_get_orders(['limit'=>1,'orderby'=>'id','order'=>'DESC','return'=>'ids','status'=>array_keys(wc_get_order_statuses())]); echo '@@'.(empty($o)?0:$o[0]).'@@';` in 'cli'. (in 1s 490ms)\n"
+                    },
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp eval $o = wc_get_orders(['limit'=>1,'orderby'=>'id','order'=>'DESC','return'=>'ids','status'=>array_keys(wc_get_order_statuses())]); echo '@@'.(empty($o)?0:$o[0]).'@@';' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp eval $o = wc_get_orders(['limit'=>1,'orderby'=>'id','order'=>'DESC','return'=>'ids','status'=>array_keys(wc_get_order_statuses())]); echo '@@'.(empty($o)?0:$o[0]).'@@';` in 'cli'. (in 1s 333ms)\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:18.658Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "29b720a9ac74378ae6c8-4ca12f4582037bd05a41",
+          "file": "checkout.spec.mjs",
+          "line": 21,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "countdown.spec.mjs",
+      "file": "countdown.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "5. countdown 2026-11-10T03:59:00Z",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 134,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:29.047Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "58eee631de55d532649c-5c0354ec1d6ce74b8dc0",
+          "file": "countdown.spec.mjs",
+          "line": 12,
+          "column": 3
+        },
+        {
+          "title": "5. countdown 2026-11-10T04:01:00Z",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 114,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:29.184Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "58eee631de55d532649c-ea678c955604573ea514",
+          "file": "countdown.spec.mjs",
+          "line": 12,
+          "column": 3
+        },
+        {
+          "title": "5. countdown 2026-11-13T04:01:00Z",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 115,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:29.303Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "58eee631de55d532649c-449bb7d3d5acd4b82e3a",
+          "file": "countdown.spec.mjs",
+          "line": 12,
+          "column": 3
+        },
+        {
+          "title": "5. countdown 2026-12-24T04:01:00Z",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 119,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:29.422Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "58eee631de55d532649c-81fc40a4457fe208cf16",
+          "file": "countdown.spec.mjs",
+          "line": 12,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "entry-notice.spec.mjs",
+      "file": "entry-notice.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "1. entry notice behaviour",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 233,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:29.548Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4a1c12f53c0d06c31355-6b2091dc26d480373f88",
+          "file": "entry-notice.spec.mjs",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "1b. plain HTML is crawlable and notice is hidden attr",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 49,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:29.784Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4a1c12f53c0d06c31355-3aa0a5b88c304080e327",
+          "file": "entry-notice.spec.mjs",
+          "line": 25,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "settings.spec.mjs",
+      "file": "settings.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "11. partner note is off by default and appears only when enabled with an address",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5097,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:29.841Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b86c348d0e00b13e3ea-d45ca468b1b1af3863b2",
+          "file": "settings.spec.mjs",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "12. discount block is off by default, and applies when enabled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3717,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:34.941Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b86c348d0e00b13e3ea-f2bbaa24eefd56ddb7ff",
+          "file": "settings.spec.mjs",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "13. CSV import through the admin page updates by catalogue number",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1220,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:38.662Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5b86c348d0e00b13e3ea-fdcd8056f364468de122",
+          "file": "settings.spec.mjs",
+          "line": 41,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "shipping.spec.mjs",
+      "file": "shipping.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "6a. 200.00 gets free Express Post",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 892,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp eval $p = new WC_Product_Simple(); $p->set_name('Temp TEST-19999'); $p->set_sku('TEST-19999'); $p->set_regular_price('199.99'); $p->set_manage_stock(false); $p->set_status('publish'); echo '@@'.$p->save().'@@';' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp eval $p = new WC_Product_Simple(); $p->set_name('Temp TEST-19999'); $p->set_sku('TEST-19999'); $p->set_regular_price('199.99'); $p->set_manage_stock(false); $p->set_status('publish'); echo '@@'.$p->save().'@@';` in 'cli'. (in 1s 537ms)\n"
+                    },
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp eval $p = new WC_Product_Simple(); $p->set_name('Temp TEST-20000'); $p->set_sku('TEST-20000'); $p->set_regular_price('200.00'); $p->set_manage_stock(false); $p->set_status('publish'); echo '@@'.$p->save().'@@';' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp eval $p = new WC_Product_Simple(); $p->set_name('Temp TEST-20000'); $p->set_sku('TEST-20000'); $p->set_regular_price('200.00'); $p->set_manage_stock(false); $p->set_status('publish'); echo '@@'.$p->save().'@@';` in 'cli'. (in 1s 575ms)\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:41.594Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9154f3a276e8fe773dc3-a5842f11c79c4b0d9dc7",
+          "file": "shipping.spec.mjs",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "6b. 199.99 pays Express Post 14.95",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 422,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "text": "\u001b[34mℹ\u001b[39m Starting 'wp eval foreach (['TEST-19999','TEST-20000'] as $s) { $id = wc_get_product_id_by_sku($s); if ($id) wp_delete_post($id, true); } $q = get_posts(['post_type'=>'product','post_status'=>'any','numberposts'=>-1,'s'=>'Temp TEST-','fields'=>'ids']); foreach ($q as $i) wp_delete_post($i, true); echo '@@done@@';' on the cli container. \n\n\u001b[32m✔\u001b[39m Ran `wp eval foreach (['TEST-19999','TEST-20000'] as $s) { $id = wc_get_product_id_by_sku($s); if ($id) wp_delete_post($id, true); } $q = get_posts(['post_type'=>'product','post_status'=>'any','numberposts'=>-1,'s'=>'Temp TEST-','fields'=>'ids']); foreach ($q as $i) wp_delete_post($i, true); echo '@@done@@';` in 'cli'. (in 1s 533ms)\n"
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:46.119Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9154f3a276e8fe773dc3-e76fd976ef87dee43d61",
+          "file": "shipping.spec.mjs",
+          "line": 42,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "templates.spec.mjs",
+      "file": "templates.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "7. lab-use line on every template",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1390,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:48.373Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b9a6ecf89ac32bbf2ee-c4f5fcd4f0c687f547c8",
+          "file": "templates.spec.mjs",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "8. no WordPress tells",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "info",
+                  "description": "home: wp-content x169"
+                },
+                {
+                  "type": "info",
+                  "description": "home: wc-block x0"
+                },
+                {
+                  "type": "info",
+                  "description": "home: woocommerce x34"
+                },
+                {
+                  "type": "info",
+                  "description": "product: wp-content x81"
+                },
+                {
+                  "type": "info",
+                  "description": "product: wc-block x0"
+                },
+                {
+                  "type": "info",
+                  "description": "product: woocommerce x10"
+                },
+                {
+                  "type": "info",
+                  "description": "checkout: wp-content x129"
+                },
+                {
+                  "type": "info",
+                  "description": "checkout: wc-block x18"
+                },
+                {
+                  "type": "info",
+                  "description": "checkout: woocommerce x73"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 492,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T05:47:49.767Z",
+                  "annotations": [
+                    {
+                      "type": "info",
+                      "description": "home: wp-content x169"
+                    },
+                    {
+                      "type": "info",
+                      "description": "home: wc-block x0"
+                    },
+                    {
+                      "type": "info",
+                      "description": "home: woocommerce x34"
+                    },
+                    {
+                      "type": "info",
+                      "description": "product: wp-content x81"
+                    },
+                    {
+                      "type": "info",
+                      "description": "product: wc-block x0"
+                    },
+                    {
+                      "type": "info",
+                      "description": "product: woocommerce x10"
+                    },
+                    {
+                      "type": "info",
+                      "description": "checkout: wp-content x129"
+                    },
+                    {
+                      "type": "info",
+                      "description": "checkout: wc-block x18"
+                    },
+                    {
+                      "type": "info",
+                      "description": "checkout: woocommerce x73"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b9a6ecf89ac32bbf2ee-e0635cf13bb3e7280d0f",
+          "file": "templates.spec.mjs",
+          "line": 27,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-06T05:46:59.247Z",
+    "duration": 51051.782,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

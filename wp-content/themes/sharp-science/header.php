@@ -8,7 +8,7 @@
 </head>
 <body <?php body_class(); ?>>
 <a class="skip" href="#main">Skip to content</a>
-<div class="announce">
+<div class="announce" role="region" aria-label="Store notices">
 	<div class="wrap announce__row">
 		<span data-lab-line><?php echo esc_html( ss_get( 'lab_line' ) ); ?></span>
 		<span data-dispatch><?php echo esc_html( ss_dispatch_message() ); ?></span>

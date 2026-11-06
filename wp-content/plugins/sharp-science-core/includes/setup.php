@@ -30,6 +30,9 @@ class SS_CLI {
 			$file    = "$pages_dir/$slug.html";
 			$content = file_exists( $file ) ? file_get_contents( $file ) : '';
 			$content = preg_replace( '#<h2>' . preg_quote( $title, '#' ) . '</h2>\s*#', '', $content, 1 );
+			if ( ! str_contains( $content, '<h2' ) ) { // The page title is the h1, so subheads step up one level.
+				$content = str_replace( array( '<h3>', '</h3>' ), array( '<h2>', '</h2>' ), $content );
+			}
 			$page    = get_page_by_path( $slug );
 			$data    = array( 'post_title' => $title, 'post_name' => $slug, 'post_type' => 'page', 'post_status' => 'publish', 'post_content' => $content );
 			if ( $page ) {
