@@ -34,7 +34,7 @@ function ss_product_data( int $id ): array {
 		'category'     => $terms && ! is_wp_error( $terms ) ? $terms[0]->name : '',
 		'label_w'      => $w,
 		'label_h'      => $h,
-		'type'         => 'auto' === $type ? ss_detect_render_type( $prod->get_name() ) : $type,
+		'type'         => 'auto' === $type ? ss_detect_render_type( $prod->get_name(), (string) get_post_meta( $id, '_ss_spec', true ) ) : $type,
 	);
 }
 

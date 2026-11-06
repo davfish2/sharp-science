@@ -100,13 +100,23 @@ class SS_CLI {
 	 *
 	 * <file>
 	 * : Path to the CSV.
+	 *
+	 * [--skip-existing]
+	 * : Skip products that already exist by SKU, slug, or title.
 	 */
-	public function import( $args ) {
-		$res = ss_import_csv( $args[0] );
+	public function import( $args, $assoc = array() ) {
+		$skip = ! empty( $assoc['skip-existing'] );
+		$res  = ss_import_csv( $args[0], $skip );
 		foreach ( $res['errors'] as $e ) {
 			WP_CLI::warning( $e );
 		}
-		WP_CLI::success( sprintf( '%d created, %d updated.', $res['created'], $res['updated'] ) );
+		WP_CLI::success( sprintf(
+			'%d created, %d updated, %d skipped (duplicates), %d excluded (Pen cartridge).',
+			$res['created'],
+			$res['updated'],
+			$res['skipped'] ?? 0,
+			$res['excluded'] ?? 0
+		) );
 	}
 
 	/** Creates demo certificates for the current product catalog. */

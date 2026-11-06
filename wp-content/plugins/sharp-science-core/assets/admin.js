@@ -23,10 +23,14 @@
     const list = A.pending;
     if (!list.length) return;
     let n = 0, failed = 0;
-    for (const item of list) {
-      status(`Preparing product image ${n + 1} of ${list.length}…`);
-      try { await convert(item); } catch (e) { failed++; console.error(e); }
-      n++;
+    const concurrency = 4;
+    for (let i = 0; i < list.length; i += concurrency) {
+      const batch = list.slice(i, i + concurrency);
+      status(`Preparing product image ${Math.min(i + concurrency, list.length)} of ${list.length}…`);
+      await Promise.all(batch.map(async (item) => {
+        try { await convert(item); } catch (e) { failed++; console.error(e); }
+        n++;
+      }));
     }
     status(failed ? `${failed} image(s) could not be prepared. Reload this page to try again.` : (list.length > 1 ? `${n} product images updated.` : 'Label and image are up to date.'));
     document.documentElement.dataset.ssRendered = String(n - failed);

@@ -3,21 +3,22 @@ defined( 'ABSPATH' ) || exit;
 
 /** 2.5D product scenes as SVG. The admin browser converts them to WebP (see assets/admin.js). */
 function ss_render_types(): array {
-	return array( 'auto' => 'Automatic', 'vial' => 'Clear vial', 'amber' => 'Amber vial', 'beaker' => 'Beaker', 'erlenmeyer' => 'Conical flask', 'volumetric' => 'Volumetric flask', 'cylinder' => 'Cylinder', 'pipette' => 'Pipette', 'bottle' => 'Bottle', 'box' => 'Box' );
+	return array( 'auto' => 'Automatic', 'vial' => 'Clear vial', 'amber' => 'Amber vial', 'spray' => 'Nasal spray', 'bottle' => 'Capsule / Tablet bottle', 'box' => 'Clinical pack / Box', 'beaker' => 'Beaker', 'erlenmeyer' => 'Conical flask', 'volumetric' => 'Volumetric flask', 'cylinder' => 'Cylinder', 'pipette' => 'Pipette' );
 }
 
-function ss_detect_render_type( string $name ): string {
-	$n = strtolower( $name );
+function ss_detect_render_type( string $name, string $spec = '' ): string {
+	$n = strtolower( $name . ' ' . $spec );
 	return match ( true ) {
 		str_contains( $n, 'amber' ) => 'amber',
-		str_contains( $n, 'vial' ) && ! str_contains( $n, 'rack' ) => 'vial',
+		str_contains( $n, 'spray' ), str_contains( $n, 'nasal' ) => 'spray',
+		str_contains( $n, 'capsule' ), str_contains( $n, 'tablet' ), str_contains( $n, 'oral' ), str_contains( $n, 'solution' ), str_contains( $n, 'bottle' ) => 'bottle',
+		str_contains( $n, 'swab' ), str_contains( $n, 'pack' ), str_contains( $n, 'rack' ) => 'box',
 		str_contains( $n, 'beaker' ) => 'beaker',
 		str_contains( $n, 'erlenmeyer' ), str_contains( $n, 'conical' ) => 'erlenmeyer',
 		str_contains( $n, 'volumetric' ) => 'volumetric',
 		str_contains( $n, 'cylinder' ) => 'cylinder',
 		str_contains( $n, 'pipette' ) && ! str_contains( $n, 'tip' ) => 'pipette',
-		str_contains( $n, 'solution' ), str_contains( $n, 'bottle' ) => 'bottle',
-		default => 'box',
+		default => 'vial',
 	};
 }
 
@@ -146,6 +147,19 @@ function ss_sc_bottle( array $p ): string {
 		. sprintf( '<rect x="%s" y="%s" width="%s" height="150" rx="10" fill="url(#metal)"/>', $l - 26, $top - 250, $nw + 52 ) . $ribs . ss_sc_label( $p, $x + 12, $top + 330, $W - 24 );
 }
 
+function ss_sc_spray( array $p ): string {
+	$W = 500; $c = SS_CX; $f = SS_FLOOR; $x = $c - $W / 2; $top = $f - 680; $nw = 190; $r = 44; $l = $c - $nw / 2; $n = $c + $nw / 2; $xr = $x + $W;
+	$d = "M$l " . ( $top - 36 ) . " L$l " . $top . " C$l " . ( $top + 36 ) . " $x " . ( $top + 42 ) . " $x " . ( $top + 110 ) . " L$x " . ( $f - $r ) . " Q$x $f " . ( $x + $r ) . " $f L" . ( $xr - $r ) . " $f Q$xr $f $xr " . ( $f - $r ) . " L$xr " . ( $top + 110 ) . " C$xr " . ( $top + 42 ) . " $n " . ( $top + 36 ) . " $n " . $top . " L$n " . ( $top - 36 ) . ' Z';
+	$nozzle = 'M' . ( $c - 72 ) . ' ' . ( $top - 108 ) . ' L' . ( $c - 34 ) . ' ' . ( $top - 320 ) . ' Q' . ( $c - 30 ) . ' ' . ( $top - 344 ) . ' ' . $c . ' ' . ( $top - 344 ) . ' Q' . ( $c + 30 ) . ' ' . ( $top - 344 ) . ' ' . ( $c + 34 ) . ' ' . ( $top - 320 ) . ' L' . ( $c + 72 ) . ' ' . ( $top - 108 ) . ' Z';
+	return ss_sc_shadow( $W )
+		. "<path d=\"$d\" fill=\"url(#poly)\" stroke=\"#9EA5A7\" stroke-opacity=\".6\" stroke-width=\"2\"/>"
+		. sprintf( '<rect x="%s" y="%s" width="%s" height="72" rx="8" fill="url(#metal)"/>', $l - 14, $top - 108, $nw + 28 )
+		. sprintf( '<rect x="%s" y="%s" width="340" height="28" rx="14" fill="url(#poly)" stroke="#9EA5A7" stroke-width="2"/>', $c - 170, $top - 126 )
+		. "<path d=\"$nozzle\" fill=\"url(#poly)\" stroke=\"#9EA5A7\" stroke-width=\"2\"/>"
+		. sprintf( '<path d="%s" fill="url(#glass)" opacity=".45"/>', 'M' . ( $c - 86 ) . ' ' . ( $top - 108 ) . ' L' . ( $c - 64 ) . ' ' . ( $top - 360 ) . ' Q' . ( $c - 60 ) . ' ' . ( $top - 384 ) . ' ' . $c . ' ' . ( $top - 384 ) . ' Q' . ( $c + 60 ) . ' ' . ( $top - 384 ) . ' ' . ( $c + 64 ) . ' ' . ( $top - 360 ) . ' L' . ( $c + 86 ) . ' ' . ( $top - 108 ) . ' Z' )
+		. ss_sc_label( $p, $x + 8, $top + 180, $W - 16 );
+}
+
 function ss_sc_box( array $p ): string {
 	$inst = 'Instruments' === ( $p['category'] ?? '' );
 	$W = $inst ? 860 : 780; $H = $inst ? 700 : 560; $D = 170; $f = SS_FLOOR; $x = SS_CX - $W / 2 - $D / 2 + 10; $y = $f - $H; $dy = 86; $xr = $x + $W;
@@ -162,6 +176,7 @@ function ss_render_svg( array $p ): string {
 	$body = match ( $p['type'] ) {
 		'vial' => ss_sc_vial( $p, 'glass' ),
 		'amber' => ss_sc_vial( $p, 'amber' ),
+		'spray' => ss_sc_spray( $p ),
 		'beaker' => ss_sc_beaker( $p ),
 		'erlenmeyer' => ss_sc_erlenmeyer( $p ),
 		'volumetric' => ss_sc_volumetric( $p ),
