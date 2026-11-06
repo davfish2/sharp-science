@@ -1,0 +1,10 @@
+{
+  "core": null,
+  "phpVersion": "8.3",
+  "plugins": ["https://downloads.wordpress.org/plugin/woocommerce.latest-stable.zip", "./wp-content/plugins/sharp-science-core"],
+  "themes": ["./wp-content/themes/sharp-science"],
+  "port": 8888,
+  "testsEnvironment": false,
+  "config": { "WP_DEBUG": false, "WP_ENVIRONMENT_TYPE": "local" },
+  "mappings": { "sharp-data": "./data", "sharp-brand": "./brand" }
+}

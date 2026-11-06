@@ -111,6 +111,16 @@ function box(p) {
 const draw = { vial: p => vial(p, 'glass'), amber: p => vial(p, 'amber'), beaker, erlenmeyer, volumetric, cylinder, pipette, bottle, box };
 const scene = p => `<svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}"><defs>${defs}</defs><rect width="${S}" height="${S}" fill="url(#bg)"/>${draw[renderType(p)](p)}</svg>`;
 
+// Hero: three vessels on the shared backdrop, for the home page.
+async function hero(pg) {
+  const P = loadProducts(), get = c => P.find(p => p.catalogue_no === c);
+  const place = (svg, x, sc) => `<g transform="translate(${x} ${1050 - 1370 * sc}) scale(${sc})">${svg}</g>`;
+  const body = place(volumetric(get('SS-F100')), -164, .58) + place(vial(get('SS-V10'), 'glass'), 276, .58) + place(beaker(get('SS-B250')), 760, .55);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1600 1143"><defs>${defs}</defs><rect width="1600" height="1143" fill="url(#bg)"/>${body}</svg>`;
+  await pg.setViewportSize({ width: 1400, height: 1000 });
+  await pg.setContent(`<!doctype html><body style="margin:0">${svg}`);
+  await sharp(await pg.screenshot({ type: 'png' })).webp({ quality: 82 }).toFile('wp-content/themes/sharp-science/assets/img/hero.webp');
+}
 const only = process.argv[2]?.split(',');
 const b = await chromium.launch(), pg = await b.newPage({ viewport: { width: S, height: S } });
 for (const p of loadProducts().filter(p => !only || only.includes(p.catalogue_no))) {
@@ -118,5 +128,6 @@ for (const p of loadProducts().filter(p => !only || only.includes(p.catalogue_no
   const png = await pg.screenshot({ type: 'png' });
   await sharp(png).webp({ quality: 84 }).toFile(`brand/renders/${p.catalogue_no}.webp`);
 }
+await hero(pg);
 await b.close();
 console.log('renders done');

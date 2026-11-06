@@ -1,0 +1,20 @@
+/* Client admin. Calm, graphite and brass, with the clutter removed. */
+:root{--ss-ink:#16181D;--ss-brass:#A8844E;--ss-slate:#5E646E;--ss-line:#D9D3C8}
+body.wp-admin{background:#F6F4EF}
+#adminmenu,#adminmenuback,#adminmenuwrap{background:#16181D}
+#adminmenu a{color:#ECE7DE}
+#adminmenu li.current a.menu-top,#adminmenu .wp-has-current-submenu a.wp-has-current-submenu,#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu{background:#2A2D35;color:#fff}
+#adminmenu li.menu-top:hover,#adminmenu li>a.menu-top:focus{background:#2A2D35;color:#fff}
+#adminmenu .wp-submenu{background:#20232A}
+#wpadminbar{background:#16181D}
+#wp-admin-bar-wp-logo,#wp-admin-bar-comments,#wp-admin-bar-new-content,#wp-admin-bar-updates,#footer-upgrade{display:none!important}
+.wp-core-ui .button-primary{background:#16181D;border-color:#16181D;border-radius:6px}
+.wp-core-ui .button-primary:hover,.wp-core-ui .button-primary:focus{background:#2A2D35;border-color:#2A2D35}
+.ss-panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;max-width:860px}
+.ss-panel p{margin:8px 0}.ss-panel label{display:block;font-weight:600;margin-bottom:4px}
+.ss-panel input:not([type=checkbox]),.ss-panel select{width:100%;max-width:none}
+.ss-panel small{display:block;color:var(--ss-slate);margin-top:4px}
+.ss-checks{display:flex;gap:24px;align-items:center;grid-column:1/-1}.ss-checks label{font-weight:400;margin:0}
+.ss-preview{grid-column:1/-1;border-top:1px solid var(--ss-line);padding-top:12px;margin-top:8px}.ss-preview img{width:320px;max-width:100%;height:auto;border:1px solid var(--ss-line);display:block}
+.ss-page{max-width:900px}.ss-page h2{margin-top:32px;padding-top:24px;border-top:1px solid var(--ss-line)}.ss-page .form-table th{width:240px}.ss-page textarea,.ss-page input.regular-text{width:100%;max-width:480px}
+.ss-tools{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}.ss-tools>div{background:#fff;border:1px solid var(--ss-line);border-radius:8px;padding:16px}.ss-tools h3{margin-top:0}

@@ -1,0 +1,22 @@
+// Quick guest flow probe with screenshots. Usage: node tools/flow-check.mjs <out-prefix>
+import { chromium } from 'playwright';
+const out = process.argv[2], base = 'http://localhost:8888';
+const b = await chromium.launch();
+const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
+await ctx.addCookies([{ name: 'ss_entry', value: '1', url: base }]);
+const p = await ctx.newPage(); const errs = [];
+p.on('console', m => m.type() === 'error' && errs.push(m.text().slice(0, 160))); p.on('pageerror', e => errs.push(String(e).slice(0, 200)));
+await p.goto(base + '/product/griffin-beaker-250ml/');
+await p.click('.buy button');
+await p.waitForSelector('#cart-drawer:not([hidden]) .mini');
+await p.screenshot({ path: `${out}-drawer.png` });
+console.log('drawer', await p.textContent('[data-ship-text]'));
+await p.goto(base + '/cart/', { waitUntil: 'networkidle' });
+await p.screenshot({ path: `${out}-cart.png`, fullPage: true });
+await p.goto(base + '/checkout/', { waitUntil: 'networkidle' });
+await p.waitForSelector('.wc-block-checkout', { timeout: 20000 });
+await p.waitForTimeout(1500);
+await p.screenshot({ path: `${out}-checkout.png`, fullPage: true });
+const assets = await p.evaluate(() => ({ css: [...document.querySelectorAll('link[rel=stylesheet]')].map(l => l.href.split('/').slice(-3).join('/')), js: [...document.scripts].filter(s => s.src).length, jq: !!window.jQuery, gen: !!document.querySelector('meta[name=generator]'), labels: [...document.querySelectorAll('.wc-block-components-checkbox label, .wc-block-checkout__order-notes label')].map(l => l.textContent.trim()) }));
+console.log(JSON.stringify(assets, null, 1)); console.log('errors', errs);
+await b.close();

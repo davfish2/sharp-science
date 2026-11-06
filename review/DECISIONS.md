@@ -16,3 +16,16 @@
 | 12 | Favicons use a heavier cut of the mark. | The standard cut loses the Brass line at 16px. |
 | 13 | The logo, label template and renders were written by the lead, not a Sonnet agent. | They are design-critical, and Phase 3 has to port them. |
 | 14 | `/tools`, `package.json` and the lock file are tracked as well as the listed folders. | The brand assets cannot be rebuilt without them. |
+| 15 | Brand direction approved by the developer on review. | End of Phase 2 gate. |
+| 16 | Requirement 3 changed: partner shop URL blank and the note disabled by default. The setting remains. | Developer instruction. Only lawful lab supplies are in this build. |
+| 17 | Requirements 5 and 6 changed: the 21+ gate and checkbox are replaced by trade and professional customer wording. There is no age field or age setting. | Developer instruction. |
+| 18 | QR domain stays on the placeholder until the client's domain is known. | Developer instruction. |
+| 19 | Classic PHP theme, not a block theme. | A block theme keeps too many default styles, which conflicts with the no-WordPress-look requirement. |
+| 20 | Renders are written as SVG in PHP and converted to WebP in the admin browser, on the edit screen or the Sharp Science page. | Rasterising SVG on the server needs Imagick with librsvg or Chromium, which ordinary hosting rarely has. |
+| 21 | QR encoder and PDF writer are written in plain PHP inside the plugin. | No Composer dependency, and it runs on any host. |
+| 22 | Block checkout keeps two WooCommerce stylesheets (`packages-style.css`, `checkout.css`), overridden by ours. | The block checkout does not lay out without them. Everything else from WooCommerce and core is removed. |
+| 23 | Express Post placeholder is entered as $13.59 excluding GST, which shows as $14.95. | WooCommerce flat rates are entered excluding tax. |
+| 24 | Home best sellers show full rows of four only. | Six flagged products would leave gaps in the grid. |
+| 25 | Certificates are marked "Sample data", "Demo Laboratory", and the page and PDFs say they are not real test records. | A demo must not present invented test records as genuine. |
+| 26 | A cash-style "Pay on invoice (demo)" method is the only payment option. | No payment gateway was specified, and it lets the checkout test finish. |
+| 27 | Label QR uses the placeholder domain in the local environment and `home_url()` elsewhere. | It becomes correct at launch with no change. |

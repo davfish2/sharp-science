@@ -1,0 +1,5 @@
+body.login{background:#F6F4EF;color:#16181D;font-family:system-ui,sans-serif}
+.login h1 a{background:var(--ss-logo) center/contain no-repeat;width:220px;height:56px;margin-bottom:16px}
+.login form{background:#fff;border:1px solid #D9D3C8;border-radius:8px;box-shadow:none}
+.login .button-primary{background:#16181D;border-color:#16181D;border-radius:6px;box-shadow:none;text-shadow:none}
+.login #nav a,.login #backtoblog a{color:#5E646E}.language-switcher{display:none}
