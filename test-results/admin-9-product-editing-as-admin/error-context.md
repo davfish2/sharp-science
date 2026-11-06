@@ -1,0 +1,265 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: admin.spec.mjs >> 9. product editing as admin
+- Location: tests/admin.spec.mjs:24:1
+
+# Error details
+
+```
+Test timeout of 180000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - region "Store notices" [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: Research Use Only. Not for human or animal use
+      - generic [ref=e6]: Order now, dispatched Monday
+      - generic [ref=e7]: Free Express shipping over $200
+  - banner [ref=e8]:
+    - generic [ref=e9]:
+      - link "Sharp Science home" [ref=e10] [cursor=pointer]:
+        - /url: http://localhost:8888/
+        - img "Sharp Science" [ref=e11]
+      - navigation "Main" [ref=e16]:
+        - button "Shop" [ref=e17] [cursor=pointer]
+        - link "Certificates" [ref=e20] [cursor=pointer]:
+          - /url: http://localhost:8888/certificates/
+        - link "About" [ref=e21] [cursor=pointer]:
+          - /url: http://localhost:8888/about/
+        - link "FAQ" [ref=e22] [cursor=pointer]:
+          - /url: http://localhost:8888/faq/
+        - link "Contact" [ref=e23] [cursor=pointer]:
+          - /url: http://localhost:8888/contact/
+      - generic [ref=e24]:
+        - button "Search" [ref=e25] [cursor=pointer]
+        - button "Open cart" [ref=e29] [cursor=pointer]
+  - main [ref=e32]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - heading "Precision glassware, dispatched daily." [level=1] [ref=e36]
+          - paragraph [ref=e37]: Laboratory glassware, vials and instruments for Australian trade and professional customers.
+          - generic [ref=e38]:
+            - link "Shop the range" [ref=e39] [cursor=pointer]:
+              - /url: http://localhost:8888/shop/
+            - link "View certificates" [ref=e40] [cursor=pointer]:
+              - /url: http://localhost:8888/certificates/
+        - img "Sharp Science flask, vial and beaker" [ref=e42]
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - generic [ref=e48]: COA verified by Janoshik
+        - listitem [ref=e49]:
+          - generic [ref=e54]: Express Post, dispatched daily
+        - listitem [ref=e55]:
+          - generic [ref=e58]: Free shipping over $200
+        - listitem [ref=e59]:
+          - generic [ref=e62]: Lab-grade supplies
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - paragraph [ref=e66]:
+          - generic [ref=e67]: "01"
+          - text: Categories
+        - heading "The range" [level=2] [ref=e68]
+      - generic [ref=e69]:
+        - link "Metabolic 03" [ref=e70] [cursor=pointer]:
+          - /url: http://localhost:8888/shop/metabolic/
+          - generic [ref=e71]:
+            - generic [ref=e72]: Metabolic
+            - generic [ref=e73]: "03"
+        - link "Recovery 01" [ref=e74] [cursor=pointer]:
+          - /url: http://localhost:8888/shop/recovery/
+          - generic [ref=e75]:
+            - generic [ref=e76]: Recovery
+            - generic [ref=e77]: "01"
+        - link "Essentials 01" [ref=e78] [cursor=pointer]:
+          - /url: http://localhost:8888/shop/essentials/
+          - generic [ref=e79]:
+            - generic [ref=e80]: Essentials
+            - generic [ref=e81]: "01"
+    - generic [ref=e83]:
+      - generic [ref=e84]: COA verified by Janoshik
+      - generic [ref=e85]: Express Post, dispatched daily
+      - generic [ref=e86]: Class A volumetric glassware
+      - generic [ref=e87]: Free shipping over $200
+      - generic [ref=e88]: Prices include GST
+      - generic [ref=e89]: COA verified by Janoshik
+      - generic [ref=e90]: Express Post, dispatched daily
+      - generic [ref=e91]: Class A volumetric glassware
+      - generic [ref=e92]: Free shipping over $200
+      - generic [ref=e93]: Prices include GST
+      - generic [ref=e94]: COA verified by Janoshik
+      - generic [ref=e95]: Express Post, dispatched daily
+      - generic [ref=e96]: Class A volumetric glassware
+      - generic [ref=e97]: Free shipping over $200
+      - generic [ref=e98]: Prices include GST
+      - generic [ref=e99]: COA verified by Janoshik
+      - generic [ref=e100]: Express Post, dispatched daily
+      - generic [ref=e101]: Class A volumetric glassware
+      - generic [ref=e102]: Free shipping over $200
+      - generic [ref=e103]: Prices include GST
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - paragraph [ref=e108]:
+            - generic [ref=e109]: "02"
+            - text: Best sellers
+          - heading "Most ordered" [level=2] [ref=e110]
+        - link "All products" [ref=e111] [cursor=pointer]:
+          - /url: http://localhost:8888/shop/
+      - generic [ref=e114]:
+        - article [ref=e115]:
+          - link [aria-hidden] [ref=e116] [cursor=pointer]:
+            - /url: http://localhost:8888/product/bacteriostatic-water-10ml/
+          - generic [ref=e118]:
+            - heading [level=3] [ref=e119]:
+              - link "Bacteriostatic Water 10 ml" [ref=e120] [cursor=pointer]:
+                - /url: http://localhost:8888/product/bacteriostatic-water-10ml/
+            - paragraph [ref=e121]: SS-BAC10
+            - paragraph [ref=e122]: 10 ml, 0.9% Benzyl Alcohol
+            - generic [ref=e123]:
+              - strong [ref=e124]:
+                - generic [ref=e125]: $24.00
+              - button "Quick add Bacteriostatic Water 10 ml" [ref=e126] [cursor=pointer]: Quick add
+        - article [ref=e127]:
+          - link [aria-hidden] [ref=e128] [cursor=pointer]:
+            - /url: http://localhost:8888/product/reta-10/
+          - generic [ref=e130]:
+            - heading [level=3] [ref=e131]:
+              - link "RETA-10" [ref=e132] [cursor=pointer]:
+                - /url: http://localhost:8888/product/reta-10/
+            - paragraph [ref=e133]: SS-RT10
+            - paragraph [ref=e134]: 10 mg, Lyophilised
+            - generic [ref=e135]:
+              - strong [ref=e136]:
+                - generic [ref=e137]: $189.00
+              - button "Quick add RETA-10" [ref=e138] [cursor=pointer]: Quick add
+        - article [ref=e139]:
+          - link [aria-hidden] [ref=e140] [cursor=pointer]:
+            - /url: http://localhost:8888/product/sema-05/
+          - generic [ref=e142]:
+            - heading [level=3] [ref=e143]:
+              - link "SEMA-05" [ref=e144] [cursor=pointer]:
+                - /url: http://localhost:8888/product/sema-05/
+            - paragraph [ref=e145]: SS-SM05
+            - paragraph [ref=e146]: 5 mg, Lyophilised
+            - generic [ref=e147]:
+              - strong [ref=e148]:
+                - generic [ref=e149]: $129.00
+              - button "Quick add SEMA-05" [ref=e150] [cursor=pointer]: Quick add
+        - article [ref=e151]:
+          - link [aria-hidden] [ref=e152] [cursor=pointer]:
+            - /url: http://localhost:8888/product/tesa-05/
+          - generic [ref=e154]:
+            - heading [level=3] [ref=e155]:
+              - link "TESA-05" [ref=e156] [cursor=pointer]:
+                - /url: http://localhost:8888/product/tesa-05/
+            - paragraph [ref=e157]: SS-TS05
+            - paragraph [ref=e158]: 5 mg, Lyophilised
+            - generic [ref=e159]:
+              - strong [ref=e160]:
+                - generic [ref=e161]: $149.00
+              - button "Quick add TESA-05" [ref=e162] [cursor=pointer]: Quick add
+    - generic [ref=e164]:
+      - generic [ref=e165]:
+        - paragraph [ref=e166]:
+          - generic [ref=e167]: "03"
+          - text: Assurance
+        - heading "Verified, not promised" [level=2] [ref=e168]
+      - list [ref=e169]:
+        - listitem [ref=e170]:
+          - text: A
+          - heading "Sourced" [level=3] [ref=e171]
+          - paragraph [ref=e172]: Selected to published glassware and instrument standards.
+        - listitem [ref=e173]:
+          - text: B
+          - heading "Certified" [level=3] [ref=e174]
+          - paragraph [ref=e175]: COA verified by Janoshik.
+        - listitem [ref=e176]:
+          - text: C
+          - heading "Dispatched" [level=3] [ref=e177]
+          - paragraph [ref=e178]: Express Post every dispatch day.
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - heading "Check your batch" [level=3] [ref=e181]
+          - paragraph [ref=e182]: The batch number is printed on your label.
+        - generic [ref=e183]: Batch number
+        - textbox "Batch number" [ref=e184]:
+          - /placeholder: B26-1015
+        - button "Check" [ref=e185] [cursor=pointer]
+    - generic [ref=e187]:
+      - generic [ref=e188]:
+        - paragraph [ref=e189]:
+          - generic [ref=e190]: "04"
+          - text: FAQ
+        - heading "Questions" [level=2] [ref=e191]
+      - generic [ref=e192]:
+        - group [ref=e193]:
+          - generic "When will my order ship?" [ref=e194] [cursor=pointer]
+        - group [ref=e197]:
+          - generic "How do certificates work?" [ref=e198] [cursor=pointer]
+        - group [ref=e201]:
+          - generic "Do you supply institutions?" [ref=e202] [cursor=pointer]
+        - group [ref=e205]:
+          - generic "What is your returns policy?" [ref=e206] [cursor=pointer]
+        - group [ref=e209]:
+          - generic "Who can order?" [ref=e210] [cursor=pointer]
+  - contentinfo [ref=e213]:
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - img "Sharp Science" [ref=e216]
+        - paragraph [ref=e221]: Laboratory glassware, sample vials and instruments, supplied across Australia.
+      - navigation "Shop" [ref=e222]:
+        - heading "Shop" [level=2] [ref=e223]
+        - list [ref=e224]:
+          - listitem [ref=e225]:
+            - link "Metabolic" [ref=e226] [cursor=pointer]:
+              - /url: http://localhost:8888/shop/metabolic/
+          - listitem [ref=e227]:
+            - link "Recovery" [ref=e228] [cursor=pointer]:
+              - /url: http://localhost:8888/shop/recovery/
+          - listitem [ref=e229]:
+            - link "Essentials" [ref=e230] [cursor=pointer]:
+              - /url: http://localhost:8888/shop/essentials/
+      - navigation "Information" [ref=e231]:
+        - heading "Information" [level=2] [ref=e232]
+        - list [ref=e233]:
+          - listitem [ref=e234]:
+            - link "Certificates" [ref=e235] [cursor=pointer]:
+              - /url: http://localhost:8888/certificates/
+          - listitem [ref=e236]:
+            - link "Shipping" [ref=e237] [cursor=pointer]:
+              - /url: http://localhost:8888/shipping/
+          - listitem [ref=e238]:
+            - link "Returns" [ref=e239] [cursor=pointer]:
+              - /url: http://localhost:8888/returns/
+          - listitem [ref=e240]:
+            - link "Terms of Sale" [ref=e241] [cursor=pointer]:
+              - /url: http://localhost:8888/terms-of-sale/
+          - listitem [ref=e242]:
+            - link "Privacy" [ref=e243] [cursor=pointer]:
+              - /url: http://localhost:8888/privacy/
+          - listitem [ref=e244]:
+            - link "FAQ" [ref=e245] [cursor=pointer]:
+              - /url: http://localhost:8888/faq/
+      - generic [ref=e246]:
+        - heading "Contact" [level=2] [ref=e247]
+        - list [ref=e248]:
+          - listitem [ref=e249]:
+            - link "Contact us" [ref=e250] [cursor=pointer]:
+              - /url: http://localhost:8888/contact/
+    - generic [ref=e251]:
+      - paragraph [ref=e252]: Research Use Only. Not for human or animal use
+      - paragraph [ref=e253]: COA verified by Janoshik
+      - paragraph [ref=e254]: © 2026 Sharp Science · Prices in AUD including GST
+```
