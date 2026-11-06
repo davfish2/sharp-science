@@ -1,7 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-const SS_CSV_COLUMNS = array( 'name', 'catalogue_no', 'slug', 'category', 'spec', 'price_aud', 'stock_qty', 'short_description', 'label_band_colour', 'featured', 'best_seller' );
+const SS_CSV_COLUMNS = array( 'name', 'catalogue_no', 'slug', 'category', 'spec', 'price_aud', 'stock_qty', 'short_description', 'label_band_colour', 'featured', 'best_seller', 'private_full_name' );
 
 /** Creates or updates products by catalogue number. Returns counts and any row errors. */
 function ss_import_csv( string $path ): array {
@@ -45,6 +45,12 @@ function ss_import_csv( string $path ): array {
 		$pid = $prod->save();
 		update_post_meta( $pid, '_ss_spec', $d['spec'] ?? '' );
 		update_post_meta( $pid, '_ss_best_seller', ! empty( $d['best_seller'] ) && '0' !== $d['best_seller'] ? 1 : 0 );
+		if ( ! empty( $d['private_full_name'] ) ) {
+			update_post_meta( $pid, 'private_full_name', sanitize_text_field( $d['private_full_name'] ) );
+		}
+		if ( ! get_post_meta( $pid, '_ss_render_type', true ) ) {
+			update_post_meta( $pid, '_ss_render_type', 'vial' );
+		}
 		ss_generate_assets( $pid );
 		$res[ $id ? 'updated' : 'created' ]++;
 	}
@@ -78,6 +84,7 @@ function ss_export_rows(): array {
 			$p->get_name(), $p->get_sku(), $p->get_slug(), $terms ? html_entity_decode( $terms[0]->name ) : '',
 			get_post_meta( $id, '_ss_spec', true ), $p->get_regular_price(), $p->get_stock_quantity(), $p->get_short_description(),
 			get_post_meta( $id, '_ss_band', true ) ?: ss_category_band( $id ), $p->get_featured() ? 1 : 0, (int) get_post_meta( $id, '_ss_best_seller', true ),
+			(string) get_post_meta( $id, 'private_full_name', true ),
 		);
 	}
 	return $rows;

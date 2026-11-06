@@ -1,17 +1,6 @@
-name,catalogue_no,slug,category,spec,price_aud,stock_qty,short_description,label_band_colour,featured,best_seller
-Borosilicate Serum Vial 2 ml,SS-V02,borosilicate-serum-vial-2ml,Vials & Storage,"2 ml, Type I",38.00,240,Clear Type I borosilicate vial. Pack of 100.,#7A8B99,0,0
-Borosilicate Serum Vial 5 ml,SS-V05,borosilicate-serum-vial-5ml,Vials & Storage,"5 ml, Type I",46.00,210,Clear Type I borosilicate vial. Pack of 100.,#7A8B99,0,1
-Borosilicate Serum Vial 10 ml,SS-V10,borosilicate-serum-vial-10ml,Vials & Storage,"10 ml, Type I",58.00,320,Clear Type I borosilicate vial with flip-off cap. Pack of 100.,#7A8B99,1,1
-Amber Storage Vial 20 ml,SS-A20,amber-storage-vial-20ml,Vials & Storage,"20 ml, Amber",64.00,150,Amber glass limits light exposure for sensitive samples. Pack of 50.,#7A8B99,0,0
-Volumetric Flask 100 ml,SS-F100,volumetric-flask-100ml,Volumetric Glassware,"100 ml, Class A",42.00,85,Class A borosilicate flask with stopper and single graduation mark.,#8C9A7E,1,1
-Graduated Cylinder 100 ml,SS-G100,graduated-cylinder-100ml,Volumetric Glassware,"100 ml, Class A",36.00,70,Class A cylinder with hexagonal base and printed graduations.,#8C9A7E,0,0
-Griffin Beaker 250 ml,SS-B250,griffin-beaker-250ml,Beakers & Flasks,"250 ml, Low form",9.50,400,Low form borosilicate beaker with spout and printed graduations.,#9C8A72,0,1
-Erlenmeyer Flask 500 ml,SS-E500,erlenmeyer-flask-500ml,Beakers & Flasks,"500 ml, Narrow neck",14.50,260,Narrow neck borosilicate conical flask with printed graduations.,#9C8A72,0,0
-Adjustable Micropipette 100–1000 µl,SS-P1000,adjustable-micropipette-1000ul,Pipetting,"100–1000 µl, Single channel",189.00,40,Single channel adjustable pipette with volume lock.,#8A80A0,1,1
-Pipette Tips 1000 µl,SS-T1000,pipette-tips-1000ul,Pipetting,"1000 µl, Racked",24.00,300,Universal fit polypropylene tips. Rack of 96.,#8A80A0,0,0
-Digital pH Meter,SS-M01,digital-ph-meter,Instruments,"0–14 pH, ±0.01",329.00,25,Benchtop meter with automatic temperature compensation and three-point calibration.,#A07F7F,1,0
-Precision Balance 0.001 g,SS-M02,precision-balance-0-001g,Instruments,"220 g, 0.001 g",1290.00,12,Internal calibration balance with draft shield and RS-232 output.,#A07F7F,0,1
-Magnetic Stirrer,SS-M03,magnetic-stirrer,Instruments,"3 L, 100–1500 rpm",245.00,30,Quiet benchtop stirrer with ceramic plate and digital speed control.,#A07F7F,0,0
-Vial Storage Rack,SS-R50,vial-storage-rack,Lab Essentials,"50 place, 22 mm",28.00,120,Autoclavable polypropylene rack for vials up to 22 mm.,#9AA3A6,0,0
-Laboratory Labels,SS-L500,laboratory-labels,Lab Essentials,"500 labels, 50 x 22 mm",19.00,180,Solvent resistant labels on a roll. Writable and thermal printable.,#9AA3A6,0,0
-Glassware Cleaning Solution 1 L,SS-S01,glassware-cleaning-solution-1l,Lab Essentials,"1 L, Phosphate free",32.00,140,Phosphate free detergent concentrate for laboratory glassware.,#9AA3A6,1,0
+name,catalogue_no,slug,category,spec,price_aud,stock_qty,short_description,label_band_colour,featured,best_seller,private_full_name
+RETA-10,SS-RT10,reta-10,Metabolic,"10 mg, Lyophilised",189.00,100,"Lyophilised powder for laboratory research use only. Not for human or animal use.",#4B6B94,1,1,Retatrutide
+TIRZA-10,SS-TZ10,tirza-10,Metabolic,"10 mg, Lyophilised",159.00,100,"Lyophilised powder for laboratory research use only. Not for human or animal use.",#4B6B94,1,1,Tirzepatide
+SEMA-05,SS-SM05,sema-05,Metabolic,"5 mg, Lyophilised",129.00,100,"Lyophilised powder for laboratory research use only. Not for human or animal use.",#4B6B94,1,1,Semaglutide
+TESA-05,SS-TS05,tesa-05,Recovery,"5 mg, Lyophilised",149.00,100,"Lyophilised powder for laboratory research use only. Not for human or animal use.",#5A7D6B,1,1,Tesamorelin
+Bacteriostatic Water 10 ml,SS-BAC10,bacteriostatic-water-10ml,Essentials,"10 ml, 0.9% Benzyl Alcohol",24.00,250,"Bacteriostatic Water, 0.9% benzyl alcohol. Sterile reagent for laboratory research use only. Not for human or animal use.",#8C9A7E,1,1,Bacteriostatic Water 10ml

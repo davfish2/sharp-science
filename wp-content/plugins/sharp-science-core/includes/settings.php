@@ -5,17 +5,17 @@ defined( 'ABSPATH' ) || exit;
 function ss_setting_fields(): array {
 	return array(
 		'Wording'      => array(
-			'lab_line'       => array( 'Lab-use line', 'text', 'For laboratory and professional use', 'Shown in the top bar, product pages, checkout and footer.' ),
+			'lab_line'       => array( 'Lab-use line', 'text', 'Research Use Only. Not for human or animal use', 'Shown in the top bar, product pages, checkout and footer.' ),
 			'notice_text'    => array( 'Entry notice text', 'textarea', 'Sharp Science supplies trade and professional laboratory customers.', '' ),
 			'notice_confirm' => array( 'Entry notice confirmation', 'text', 'I am a trade or professional customer.', '' ),
 			'leave_url'      => array( 'Leave button address', 'url', 'https://www.google.com.au/', 'Where the Leave button sends visitors.' ),
 			'checkbox_text'  => array( 'Checkout checkbox text', 'text', 'I confirm I am a trade or professional customer and accept the Terms of Sale', '' ),
-			'lab_name'       => array( 'Certificate lab name', 'text', '', 'Optional. Added to the trust line when filled in.' ),
+			'lab_name'       => array( 'Certificate lab name', 'text', 'Janoshik', 'Optional. Added to the trust line when filled in.' ),
 		),
 		'Partner shop' => array(
-			'partner_enabled' => array( 'Show partner note', 'checkbox', 0, 'Needs an address below to appear.' ),
-			'partner_url'     => array( 'Partner shop address', 'url', '', '' ),
-			'partner_text'    => array( 'Partner note text', 'text', "Looking for something we don't stock? Visit our partner shop.", '' ),
+			'partner_enabled' => array( 'Show partner note', 'checkbox', 1, 'Needs an address below to appear.' ),
+			'partner_url'     => array( 'Partner shop address', 'url', 'https://researchsupplyshop.com', '' ),
+			'partner_text'    => array( 'Partner note text', 'text', 'Need research supplies? Visit Research Supply Shop', '' ),
 		),
 		'Dispatch'     => array(
 			'cutoff'            => array( 'Cut-off time', 'time', '12:00', '24-hour time.' ),
@@ -59,14 +59,14 @@ add_action( 'update_option_ss_settings', fn() => ss_get( 'lab_line' ) );
 
 function ss_trust_line(): string {
 	$lab = trim( (string) ss_get( 'lab_name' ) );
-	return 'Batch certificates independently verified' . ( $lab ? ' by ' . $lab : '' );
+	return $lab ? 'COA verified by ' . $lab : 'COA verified';
 }
 
 function ss_partner_note(): string {
 	if ( ! ss_get( 'partner_enabled' ) || ! ss_get( 'partner_url' ) ) {
 		return '';
 	}
-	return sprintf( '<p class="partner-note"><a href="%s" rel="noopener">%s</a></p>', esc_url( ss_get( 'partner_url' ) ), esc_html( ss_get( 'partner_text' ) ) );
+	return sprintf( '<p class="partner-note"><a href="%s" target="_blank" rel="noopener">%s</a></p>', esc_url( ss_get( 'partner_url' ) ), esc_html( ss_get( 'partner_text' ) ) );
 }
 
 function ss_free_threshold(): float {

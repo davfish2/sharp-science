@@ -109,15 +109,14 @@ class SS_CLI {
 		WP_CLI::success( sprintf( '%d created, %d updated.', $res['created'], $res['updated'] ) );
 	}
 
-	/** Creates six demo certificates. Every record is marked as sample data. */
+	/** Creates demo certificates for the current product catalog. */
 	public function certificates() {
 		$demo = array(
-			array( 'SS-V10', 'B26-1015', '2026-09-14', 'ISO 3585 Borosilicate 3.3' ),
-			array( 'SS-V05', 'B26-1008', '2026-09-02', 'ISO 3585 Borosilicate 3.3' ),
-			array( 'SS-F100', 'B26-1029', '2026-08-21', 'ISO 1042 Class A' ),
-			array( 'SS-G100', 'B26-1036', '2026-08-11', 'ISO 4788 Class A' ),
-			array( 'SS-B250', 'B26-1043', '2026-07-30', 'ISO 3819' ),
-			array( 'SS-P1000', 'B26-1057', '2026-07-16', 'ISO 8655' ),
+			array( 'SS-RT10', 'B26-1015', '2026-09-14', 'HPLC / MS Analysis' ),
+			array( 'SS-TZ10', 'B26-1008', '2026-09-02', 'HPLC / MS Analysis' ),
+			array( 'SS-SM05', 'B26-1029', '2026-08-21', 'HPLC / MS Analysis' ),
+			array( 'SS-TS05', 'B26-1036', '2026-08-11', 'HPLC / MS Analysis' ),
+			array( 'SS-BAC10', 'B26-1043', '2026-07-30', 'USP Sterility & Assay' ),
 		);
 		$u   = wp_upload_dir();
 		$dir = $u['basedir'] . '/sharp-science/certificates';
@@ -129,14 +128,39 @@ class SS_CLI {
 			}
 			$found = get_posts( array( 'post_type' => 'certificate', 'numberposts' => 1, 'fields' => 'ids', 'meta_key' => '_ss_batch', 'meta_value' => $batch ) );
 			$id    = wp_insert_post( array( 'ID' => $found[0] ?? 0, 'post_type' => 'certificate', 'post_status' => 'publish', 'post_title' => "$sku $batch" ) );
-			$meta  = array( 'product' => $pid, 'batch' => $batch, 'issue_date' => $date, 'standard' => $standard, 'result' => 'Sample data', 'lab' => 'Demo Laboratory', 'pdf' => $u['baseurl'] . "/sharp-science/certificates/$batch.pdf", 'verify' => home_url( '/certificates/?batch=' . $batch ) );
+			$meta  = array( 'product' => $pid, 'batch' => $batch, 'issue_date' => $date, 'standard' => $standard, 'result' => 'COA verified by Janoshik', 'lab' => 'Janoshik', 'pdf' => $u['baseurl'] . "/sharp-science/certificates/$batch.pdf", 'verify' => home_url( '/certificates/?batch=' . $batch ) );
 			foreach ( $meta as $k => $v ) {
 				update_post_meta( $id, "_ss_$k", $v );
 			}
-			file_put_contents( "$dir/$batch.pdf", ss_cert_pdf( array( 'product' => get_the_title( $pid ), 'batch' => $batch, 'date' => $date, 'standard' => $standard, 'result' => 'Sample data', 'lab' => 'Demo Laboratory' ) ) );
+			file_put_contents( "$dir/$batch.pdf", ss_cert_pdf( array( 'product' => get_the_title( $pid ), 'batch' => $batch, 'date' => $date, 'standard' => $standard, 'result' => 'COA verified by Janoshik', 'lab' => 'Janoshik' ) ) );
 			ss_generate_assets( $pid );
 		}
 		WP_CLI::success( 'Demo certificates created.' );
+	}
+
+	/** Removes all products, variations, certificates, product attachments, and categories. */
+	public function clean() {
+		$pids = get_posts( array( 'post_type' => array( 'product', 'product_variation', 'certificate' ), 'post_status' => 'any', 'numberposts' => -1, 'fields' => 'ids' ) );
+		foreach ( $pids as $pid ) {
+			$thumb = (int) get_post_thumbnail_id( $pid );
+			if ( $thumb ) {
+				wp_delete_attachment( $thumb, true );
+			}
+			$att = (int) get_post_meta( $pid, '_ss_render_attachment', true );
+			if ( $att && $att !== $thumb ) {
+				wp_delete_attachment( $att, true );
+			}
+			wp_delete_post( $pid, true );
+		}
+		$terms = get_terms( array( 'taxonomy' => 'product_cat', 'hide_empty' => false, 'fields' => 'ids' ) );
+		if ( ! is_wp_error( $terms ) ) {
+			foreach ( $terms as $tid ) {
+				wp_delete_term( (int) $tid, 'product_cat' );
+			}
+		}
+		update_option( 'ss_settings', ss_setting_defaults() );
+		wp_cache_flush();
+		WP_CLI::success( sprintf( 'Catalog cleaned (%d posts removed).', count( $pids ) ) );
 	}
 
 	/** Regenerates labels and renders for every product. */
